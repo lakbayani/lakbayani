@@ -1,0 +1,72 @@
+html {
+    font-size: 62.5%;
+}
+
+.content {
+    color: white;
+    font-size: 3.5rem;
+    background-image: linear-gradient(rgba(35, 35, 35, 0.67)), url('../images/title.png');
+    min-height: 95vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: left;
+    padding-top: 1.5em;
+    padding-left: 3em;
+    padding-bottom: 1em;
+}
+
+.context {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    text-align: justify;
+    width: 40%;
+    display: block;
+    margin-left: 3rem;
+    margin-top: 15rem;
+}
+
+
+.content a {
+    text-decoration: none;
+    background-color: white;
+    color: #232323;
+    font-size: 2.8rem;
+    margin-top: 1em;
+    padding: 0.67em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 0.5em;
+    border: solid 3px white;
+    transition: .3s;
+}
+
+.content p {
+    margin-bottom: 0.9em;
+}
+
+.imgcontainer {
+    width: 45%;
+    text-align: center;
+}
+
+.content a:hover {
+    background-color: #232323;
+    color: white;
+    border: solid 3px white;
+    flex-wrap: nowrap;
+}
+
+.content img {
+    min-width: 85%;
+}
+
+.linebreak {
+    background-color: #232323;
+    height: 9rem;
+}
