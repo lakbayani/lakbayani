@@ -221,6 +221,10 @@ body {
     text-align: left;
 }
 
+.faq-information h1 {
+    text-align: center;
+}
+
 .tungkol p {
     text-align: justify;
 }
