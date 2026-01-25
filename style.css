@@ -8,6 +8,18 @@ html {
     padding: auto;
 }
 
+@keyframes appear{
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
 @media screen and (min-width: 1080px) {
 .nav {
     max-width: 100%;
@@ -38,6 +50,7 @@ html {
     .dialogue p {
         font-size: 1.5em;
     }
+
 
 } 
 
@@ -129,20 +142,22 @@ body {
 
 .button-container {
     width: 90%;
-    display: grid;
-    grid-template-columns: 15% 85%;
+    display: flex;
+    flex-direction: row;
     background-color: rgba(32,32,32,0.62);
 }
 
 .button-container a {
+    flex: 0 1 85%;
+    flex-basis: 85%;
     color: rgba(207, 207, 207);
     font-size: 1.8em;
     text-decoration: none;
     padding: 2rem;
     background-color: none;
     transition: 0.5s;
-    width: 85%;
     height: 2rem;
+    
 }
 
 .button-container a:hover {
@@ -150,18 +165,35 @@ body {
     color: rgba(32,32,32,1);
 }
 
-.button-container img {
-    width: 4rem;
+.icon-container {
+    flex: 1 1 15%;
+    height: 100%;
+    text-align: center;
+    border-right-style: solid;
+    border-right-color: rgba(207, 207, 207, 0.62);
+    border-right-width: 2px;
+    display: flex;
+    align-items: center;
+}
+
+
+.icon-container img {
+    display: block;
+    margin: auto;
+    height: 4rem;
 }
 
 .about-container {
     padding-top: 2rem;
     margin: auto;
-    height: 100dvh;
+    min-height: 100dvh;
     align-items: center;
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0;
 }
 
 .aboutcontentcontainer {
@@ -169,26 +201,20 @@ body {
 }
 
 .tungkol {
-    flex: 0 1 100%;
-    display: block;
+    flex: 1 1 80%;
     width: 90%;
-    min-height: 50%;
+    display: block;
+    height: fit-content;
     background-color: rgba(32,32,32,0.75);
     color: rgb(207, 207, 207);
     font-size: 1.7rem;
     align-items: center;
     text-align: center;
     border-radius: 30px;
-    overflow: visible;
 }
 
 .about-container img {
     height: 40%;
-}
-
-.icon-container {
-    display: flex;
-    align-items: center;
 }
 
 .tungkol h1 {
@@ -216,6 +242,7 @@ body {
 }
 
 .image-container img {
+    flex-shrink: 1;
     margin: 3em;
     width: 30%;
     position: relative;
@@ -225,7 +252,7 @@ body {
 
 .dialogue-box {
     position: relative;
-    top: -5em;
+    top: -3em;
     right: 2.01em;
     background-color: rgba(32,32,32,0.62);
     color: rgb(207, 207, 207);
@@ -255,41 +282,38 @@ body {
     color: rgb(207, 207, 207);
     padding-top: 2rem;
     margin: auto;
-
 }
 
-
-.kabanata {
-    max-width: 100%;
-    display: flex;
-    align-content: center;
-    color: rgba(207, 207, 207);
-
+.kabanata-container {
+    width: 90dvw;
 }
-
-.titlecontainer {
-    text-align: center;
-    padding: 2em;
-    background-color: rgba(32,32,32,0.62);
-    width: fit-content;
-}
-
 
 .kabanata-grid {
-    margin-top: 1em;
-    width: 95%;
     display: flex;
-    gap: 5rem;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .kabanata-grid-1 {
-    flex: 0 1 20%;
+    flex: 0 1 400px;
+    display: flex;
+    flex-direction: column;
     background-color: rgba(32,32,32,0.62);
     font-size: 1.7rem;
-    width: 100%;
     text-align: center;
     padding: 1em;
+    margin-top: 2em;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+
+.kab-container {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    max-width: 80%;
 }
 
 .kabanata-grid-1 img {
@@ -297,16 +321,10 @@ body {
 }
 
 .kabanata-grid-1 p {
-    margin: 1rem 0rem 1rem 0rem;
+    padding: 2rem;
+    text-align: justify;
 }
 
-.kab-container {
-    width: 80%;
-    aspect-ratio: 1 / 1;    
-    object-fit: cover;
-    background-color: rgba(32,32,32,0.75);
-    display: flex;
-}
 
 .credits {
     padding-top: 10rem;
