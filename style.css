@@ -54,7 +54,7 @@ html {
 
 } 
 
-a {
+a:focus, input:focus {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -135,9 +135,11 @@ body {
 }
 
 .navigation-container {
+    margin-top: 1em;
     height: 40%;
     display: flex;
     flex-direction: column;
+    gap: 3em;
 }
 
 .button-container {
@@ -148,8 +150,7 @@ body {
 }
 
 .button-container a {
-    flex: 0 1 85%;
-    flex-basis: 85%;
+    flex: 0 1 80%;
     color: rgba(207, 207, 207);
     font-size: 1.8em;
     text-decoration: none;
@@ -157,7 +158,6 @@ body {
     background-color: none;
     transition: 0.5s;
     height: 2rem;
-    
 }
 
 .button-container a:hover {
@@ -166,7 +166,7 @@ body {
 }
 
 .icon-container {
-    flex: 1 1 15%;
+    flex: 1 1 20%;
     height: 100%;
     text-align: center;
     border-right-style: solid;
@@ -329,7 +329,6 @@ body {
 .credits {
     padding-top: 10rem;
     max-width: 100vw;
-    
 }
 
 .credits-container {
@@ -337,16 +336,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 70%;
-    min-height: 50%;
+    max-height: fit-content;
     background-color: rgba(32,32,32,0.75);
     color: rgb(207, 207, 207);
     font-size: 1.7rem;
-    align-items: center;
-    text-align: center;
     border-radius: 30px;
-    overflow: visible;
-    text-align: justify;
-    padding: 2em;
+    padding-top: 1em;   
     margin-bottom: 5em;
 }
 
@@ -354,16 +349,120 @@ body {
     text-align: left;
 }
 
+.credits-container li {
+    margin: 1em;
+}
+
+.credits-container ul {
+    list-style: none;
+    margin-left: 2em;
+    padding: 0;
+}
+
 footer {
     max-width: 100vw;
     background-color: rgb(32, 32, 32);
-    text-align: center;
-    color: rgb(207, 207, 207);
+    color: rgb(165, 165, 165);
     font-size: 1.4rem;
+    padding: 1rem;
+    display: flex;
+}
+
+.logocont {
+    width: 50%;
+    text-align: right;
+}
+
+.undertone {
+    background-color: rgb(18, 18, 18);
+    color: rgba(207, 207, 207);
+    text-align: right;
+    font-size: 1.3rem;
     padding: 1rem;
 }
 
-footer img {
-    width: 5%;
+.undertone p {  
+    width: 95%;
 }
+
+
+footer img {
+    width: 10rem;
+}
+
+
+.faq-container {
+    max-width: 100vw;
+    min-height: 100vh;
+    color: rgb(207, 207, 207);
+}
+
+.faq-information {
+    width: 80%;
+    font-size: 1.7rem;
+    margin-top: 10em;
+    margin-bottom: 10em;
+} 
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(32,32,32,0.62);
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0;
+}
+
+.faq li {
+    flex: 1 0 20px;
+    list-style: none;
+    width: 80%;
+    border-radius: 8px;
+    background-color: rgb(47, 47, 47);
+}
+
+.faq li label {
+    display: flex;
+    align-items: left;
+    padding: 1em;
+    font-size: 1.78rem;
+    cursor: pointer;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgba(207, 207, 207, 0.62);
+    background-color: rgb(47,47,47);
+    color: rgb(207, 207, 207);
+    transition: background-color 0.5s;
+    text-align: justify;
+}
+
+.faq li label:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+
+input[type="radio"]{
+    display: none;
+}
+
+.answer {
+    color: rgb(198, 198, 198);
+    max-height: 0;
+    overflow: hidden;
+    width: 80%;
+    transition: max-height 0.5s, padding 0.5s;
+    text-align: justify;
+}
+
+input[type="radio"]:checked + label + .answer {
+    max-height: 1000px;
+    padding: 2em 0em 2em 0em;
+}
+
 
